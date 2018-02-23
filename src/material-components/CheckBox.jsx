@@ -1,11 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function CheckBox({ id, title }) {
+function CheckBox({ id, title, checked }) {
   return (
     <div className="mdc-form-field">
       <div className="mdc-checkbox">
-        <input type="checkbox" id={id} className="mdc-checkbox__native-control" />
+        <input
+          type="checkbox"
+          id={id}
+          className="mdc-checkbox__native-control"
+          defaultChecked={checked}
+        />
         <div className="mdc-checkbox__background">
           <svg className="mdc-checkbox__checkmark" viewBox="0 0 24 24">
             <path
@@ -26,6 +31,11 @@ function CheckBox({ id, title }) {
 CheckBox.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  checked: PropTypes.bool,
+};
+
+CheckBox.defaultProps = {
+  checked: false,
 };
 
 export default CheckBox;

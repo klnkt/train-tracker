@@ -9,11 +9,15 @@ function AddExerciseType() {
       <span className="mdc-typography--title">
         Add new exercise
       </span>
-      <form id="add-exrcs" className="">
-        <TextField id="exercise-title" title="Title" ripple="true" />
-        <CheckBox id="weight-property" title="Weight" />
-        <CheckBox id="repetitions-property" title="Repetitions" />
-        <Button text="save" />
+      <form id="add-exercise" className="">
+        <TextField id="exercise-title" title="Title" ripple required />
+        <CheckBox id="weight-property" title="Weight" checked />
+        <CheckBox id="repetitions-property" title="Repetitions" checked />
+        <Button
+          text="save"
+          ormId="add-exercise"
+          onSubmit={() => true}
+        />
         <Button text="cancel" />
       </form>
     </div>
